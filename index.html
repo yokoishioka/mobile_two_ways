@@ -75,6 +75,7 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 }
 	
 	html {
+		background:#000000;
 		background:url(bg_darker.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
@@ -116,12 +117,17 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 	}
 	header nav {
 		float:right;
+
 	}
 	header nav a {
 		margin-right:4.0em;
 	}
+	.menu-icon {
+		display: none;
+	}
 	main {
-		margin-top:15%;
+		padding-top:12%;
+		margin-left:3.0em;
 	}
 	section {
 		float:left;
@@ -132,7 +138,7 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 	}
 	aside {
 		float:right;
-
+		margin-right:2.0em;
 		
 	}
 	aside h2 {
@@ -147,7 +153,7 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 	footer {
 		position: fixed;
 		bottom:2.0em;
-		font-size:0.9em;
+		font-size:0.8em;
 		width:100%;
 	}
 	footer .copyright {
@@ -161,6 +167,7 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 	footer nav a {
 		margin-right:2.0em;
 		letter-spacing: 0.1em;
+		text-transform: uppercase;
 	}
 	
 	form {
@@ -215,15 +222,84 @@ url("css/fonts/Harabara.svg#filename") format("svg");
 
 	}
 
+@media screen and (max-width: 960px) {
+	.menu-icon {
+		display:inline;
+	}
+	header nav {
+		text-align: center;
+		display: none;
+		
+	}
+	header nav a {
+		margin-right:1.0em;
+		font-size:2.0em;
+
+	}
+	section {
+		width:90%;
+		background: #222;
+		padding:1.0em;
+		opacity: 0.8;
+		clear:right;
+	}
+	section h1 {
+		font-size:2.0em;
+		float:left;
+		line-height: 1.5em;
+		width:40%;
+	}
+	section p {
+		font-size:1.0em;
+		float:right;
+		width:40%;
+	}
+	aside {
+		background:white;
+		color:#222222;
+		width:90%;
+		margin-top:2.0em;
+		padding:1.0em;
+		opacity:0.9;
+	}
+	aside a {
+		color:#222222;
+	}
+
+	input {
+		color:#222222;
+	}
+	footer {
+		display:block;
+		position:relative;
+		bottom:0;
+	}
+	footer .copyright {
+		margin-top:2.0em;
+	}
+	footer nav {
+		margin-top:1.0em;
+		font-size:2.0em;
+	}
 	
+}
 </style>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.menu-icon').click(function(){
+			$('header nav').toggle();
+		});
+	});
+</script>
+	
 </head>
 
 <body>
 <div class="container">
 	<header>
-		<div class="logo">Stamp</div>
+		<div class="logo"><img src="logo.png"></div>
 		<nav><a href="#">About</a> <a href="#">Integrations</a> <a href="#">Pricing</a> <a href="#">Contacts</a></nav>
 		<a href="#" class="menu-icon"><i class="fas fa-bars"></i></a>
 	</header>
